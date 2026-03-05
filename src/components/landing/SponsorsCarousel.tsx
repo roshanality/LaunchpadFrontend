@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 // E-cell sponsor logos — explicit imports so the strip is always visible
 import img1 from '../../images/EcellSponsors/Associate_Partner_1_2026.png'
