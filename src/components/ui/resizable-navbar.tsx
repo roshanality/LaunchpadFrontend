@@ -28,6 +28,7 @@ interface NavItemsProps {
   }[];
   className?: string;
   onItemClick?: () => void;
+  isDarkBg?: boolean;
 }
 
 interface MobileNavProps {
@@ -109,7 +110,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, isDarkBg }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
   const location = useLocation();
 
@@ -136,7 +137,9 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
               "relative px-4 py-2 block transition-colors",
               isActive
                 ? "text-indigo-600 dark:text-indigo-400 font-semibold"
-                : "text-neutral-600 dark:text-neutral-300"
+                : isDarkBg 
+                  ? "text-white/90 hover:text-white" 
+                  : "text-neutral-600 dark:text-neutral-300"
             )}
             key={`link-${idx}`}
             {...props}

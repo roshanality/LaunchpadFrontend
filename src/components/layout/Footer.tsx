@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
               <img
                 src={LaunchpadLogo}
                 alt="KGP Launchpad"
-                className="h-16 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
               <span className="text-2xl font-semibold">
                 {data.company.name}

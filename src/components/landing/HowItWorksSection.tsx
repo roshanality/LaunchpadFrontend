@@ -14,37 +14,37 @@ interface ProcessStep {
 const STEPS: ProcessStep[] = [
   {
     id: "01",
-    title: "Sign Up & Create Profile",
-    subtitle: "Join the KGP Launchpad Community",
-    description: "Register as a founder or student. Founders list services they need at a fair cost; students showcase skills and learn by doing real work.",
-    details: ["Quick Registration", "Skill-Based Profiles", "Role Selection", "Portfolio Showcase"],
+    title: "Founders Connect & Scale",
+    subtitle: "Turn Vision Into Reality",
+    description: "Launchpad enables founders to easily post opportunities and find the right people to help them scale their startup.",
+    details: ["Avail Services", "Recruit Talent", "Connect with Mentors", "Connect with Investors"],
     image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop",
     color: "from-blue-500 to-blue-600",
   },
   {
     id: "02",
-    title: "Founders Get Work Done",
-    subtitle: "Quality at a Fair Price",
-    description: "Post your service needs on the Launchpad. Get matched with vetted students from IIT KGP who deliver at a cost that works for early-stage startups.",
-    details: ["Post Services", "Set Your Budget", "Choose Talent", "Track Progress"],
+    title: "Students Learn & Earn",
+    subtitle: "Real Projects, Real Skills",
+    description: "Students can discover exciting practical opportunities tailored to their skills, build their portfolios, and expand their network.",
+    details: ["Avail Internships with Startups", "Connect with Mentors", "Attend Upskilling Workshops", "Peer Networking"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop",
     color: "from-blue-600 to-indigo-600",
   },
   {
     id: "03",
-    title: "Students Learn & Earn",
-    subtitle: "Real Projects, Real Skills",
-    description: "Browse service requests from founders. Work on real tasks, build your portfolio, and learn from the community — all while earning at a fair rate.",
-    details: ["Browse Requests", "Apply to Work", "Deliver & Learn", "Build Portfolio"],
+    title: "Mentors Guide & Build",
+    subtitle: "Share Expertise & Shape the Future",
+    description: "Experienced professionals can give back to the community by guiding the next generation of founders and builders.",
+    details: ["Mentor Startups", "Co-build with Founders", "Share Industry Insights", "Expand Network"],
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop",
     color: "from-indigo-500 to-blue-600",
   },
   {
     id: "04",
-    title: "Launch & Grow Together",
-    subtitle: "One Platform, Two Sides",
-    description: "Founders get quality output without breaking the bank. Students gain experience and income. Events, courses, and resources support everyone.",
-    details: ["Launchpad Services", "Events & Workshops", "Course Library", "Alumni Network"],
+    title: "Investors Discover & Fund",
+    subtitle: "Back the Next Big Thing",
+    description: "Investors get early access to vetted, high-potential startups emerging from the IIT Kharagpur ecosystem.",
+    details: ["Discover Vetted Startups", "Access Pitch Decks", "Connect with Founders", "Track Growth"],
     image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop",
     color: "from-blue-500 to-cyan-500",
   },
@@ -83,7 +83,7 @@ export const HowItWorksSection: React.FC = () => {
             Your Journey on KGP Launchpad
           </h2>
           <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-            We connect founders who need work done with students who want to learn — at a fair cost for both.
+            Empowering visionary creators and driven builders to collaborate, grow, and bring incredible ideas to life together.
           </p>
         </div>
 
@@ -115,9 +115,6 @@ export const HowItWorksSection: React.FC = () => {
               className="grid md:grid-cols-2 gap-14 items-center min-h-[540px]"
             >
               <div className="py-4">
-                <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r ${activeStepData.color} text-white text-sm font-semibold mb-5`}>
-                  <span>Step {activeStepData.id}</span>
-                </div>
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">{activeStepData.title}</h3>
                 <p className="text-blue-600 font-medium mb-5 text-lg">{activeStepData.subtitle}</p>
                 <p className="text-gray-600 leading-relaxed mb-8 text-base md:text-lg">{activeStepData.description}</p>

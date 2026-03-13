@@ -10,18 +10,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../co
 import { Badge } from '../components/ui/badge'
 import { toast } from 'react-hot-toast'
 import { Loader2, CheckCircle, Clock, AlertCircle, Send, FileText } from 'lucide-react'
-import { AnimatedMarqueeHero } from '../components/ui/hero-3'
 
-const ASK_SERVICES_HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1756312148347-611b60723c7a?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1757865579201-693dd2080c73?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1756786605218-28f7dd95a493?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1757519740947-eef07a74c4ab?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1757263005786-43d955f07fb1?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1757207445614-d1e12b8f753e?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1757269746970-dc477517268f?w=900&auto=format&fit=crop&q=60',
-  'https://images.unsplash.com/photo-1755119902709-a53513bcbedc?w=900&auto=format&fit=crop&q=60',
-]
+
 
 interface ServiceRequest {
     id: number
@@ -136,27 +126,11 @@ export const AskServicesPage: React.FC = () => {
         return idx >= 0 ? idx : 0
     }
 
-    const scrollToForm = () => {
-        document.getElementById('request-form')?.scrollIntoView({ behavior: 'smooth' })
-    }
+  
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
-            <AnimatedMarqueeHero
-                tagline="Get matched with the right team"
-                title={
-                    <>
-                        Ask for
-                        <br />
-                        Services
-                    </>
-                }
-                description="Submit your project and we'll connect you with verified agencies and freelancers from our network. Track progress from submission to delivery."
-                ctaText="Submit a request"
-                onCtaClick={scrollToForm}
-                images={ASK_SERVICES_HERO_IMAGES}
-                className="bg-gradient-to-br from-blue-50/80 via-white to-indigo-50/80"
-            />
+            
 
             <div id="request-form" className="container mx-auto px-4 max-w-6xl pt-8 pb-12 scroll-mt-24">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

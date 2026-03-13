@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { getApiUrl } from '../../config'
 import { cn } from '../../lib/utils'
@@ -30,6 +30,7 @@ export const AppNavbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false)
   const [profileAvatar, setProfileAvatar] = useState<string | null>(null)
+  const location = useLocation()
 
   const { scrollY } = useScroll()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -72,12 +73,14 @@ export const AppNavbar: React.FC = () => {
       return [
         { name: 'Dashboard', link: '/admin/dashboard' },
         { name: 'Approvals', link: '/admin/allowing' },
+        { name: 'LaunchDeck', link: '/launchdeck' },
         { name: 'Events', link: '/admin/events' },
         { name: 'Support', link: '/admin/support' },
       ]
     } else if (user.role === 'alumni') {
       return [
         { name: 'Dashboard', link: '/dashboard' },
+        { name: 'LaunchDeck', link: '/launchdeck' },
         { name: 'Ask Services', link: '/launchpad' },
         { name: 'Resources', link: '/resources' },
         { name: 'Events', link: '/events' },
@@ -98,6 +101,11 @@ export const AppNavbar: React.FC = () => {
   }
 
   const items = getNavigationItems()
+  const isDarkBgPage = !isScrolled && (
+    location.pathname.startsWith('/launchdeck') || 
+    location.pathname.startsWith('/resources') || 
+    location.pathname.startsWith('/events')
+  )
 
   return (
     <div className="relative w-full">
@@ -118,20 +126,20 @@ export const AppNavbar: React.FC = () => {
                 isScrolled ? "opacity-0 w-0 overflow-hidden p-0" : "opacity-100",
                 "hidden md:flex"
               )}>
-                <img src={iitkgpLogo} alt="IIT Kharagpur" className="h-8 object-contain" />
-                <img src={launchpadLogo} alt="KGP Launchpad Startup Accelerator" className="h-9 object-contain" />
-                <img src={EcellLogo} alt="E-Cell" className="h-8 object-contain" />
+
+                <img src={launchpadLogo} alt="KGP Launchpad Startup Accelerator" className="h-16 object-contain" />
+                <img src={EcellLogo} alt="E-Cell" className="h-10 object-contain" />
               </div>
               {/* Mobile: show Launchpad logo */}
               <img
                 src={launchpadLogo}
                 alt="KGP Launchpad"
-                className="h-8 object-contain md:hidden flex-shrink-0"
+                className="h-12 object-contain md:hidden flex-shrink-0"
               />
             </Link>
           </div>
 
-          <NavItems items={items} />
+          <NavItems items={items} isDarkBg={isDarkBgPage} />
 
           <div className="flex items-center gap-2">
             {user ? (
@@ -147,10 +155,14 @@ export const AppNavbar: React.FC = () => {
                     />
                     <AvatarFallback>{user.name.charAt(0).toUpperCase()}</AvatarFallback>
                   </Avatar>
-                  <span className={cn("hidden lg:inline-block text-sm font-medium text-gray-700 transition-all duration-300", isScrolled ? "max-w-0 opacity-0 overflow-hidden" : "max-w-[200px] opacity-100")}>
+                  <span className={cn(
+                    "hidden lg:inline-block text-sm font-medium transition-all duration-300", 
+                    isScrolled ? "max-w-0 opacity-0 overflow-hidden" : "max-w-[200px] opacity-100",
+                    isDarkBgPage ? "text-white" : "text-gray-700"
+                  )}>
                     {user.name}
                   </span>
-                  <ChevronDown className="hidden lg:block h-4 w-4 text-gray-500" />
+                  <ChevronDown className={cn("hidden lg:block h-4 w-4", isDarkBgPage ? "text-white/80" : "text-gray-500")} />
                 </button>
 
                 {isProfileMenuOpen && (
@@ -205,7 +217,7 @@ export const AppNavbar: React.FC = () => {
         <MobileNav visible={isMobileMenuOpen} className="lg:hidden">
           <MobileNavHeader>
             <Link to="/" className="flex items-center gap-2">
-              <img src={launchpadLogo} alt="KGP Launchpad" className="h-8 object-contain" />
+              <img src={launchpadLogo} alt="KGP Launchpad" className="h-12 object-contain" />
             </Link>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}

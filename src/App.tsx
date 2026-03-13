@@ -64,6 +64,13 @@ import { AdminResourcesPage } from './pages/admin/AdminResourcesPage'
 import { EventsPage } from './pages/events/EventsPage'
 import { EventDetailPage } from './pages/events/EventDetailPage'
 import { MyEventsPage } from './pages/events/MyEventsPage'
+import { LaunchDeckPage as LaunchDeckListingPage } from './pages/launchdeck/LaunchDeckPage'
+import { PitchDetailPage } from './pages/launchdeck/PitchDetailPage'
+import { CreatePitchPage } from './pages/launchdeck/CreatePitchPage'
+import { EditPitchPage } from './pages/launchdeck/EditPitchPage'
+import { MyPitchesPage } from './pages/launchdeck/MyPitchesPage'
+import { MentorshipRequestsPage } from './pages/launchdeck/MentorshipRequestsPage'
+import { AdminLaunchDeckPage } from './pages/admin/AdminLaunchDeckPage'
 
 function App() {
   return (
@@ -95,6 +102,15 @@ function App() {
             <Route path="/alumni/services" element={<MyServicesPage />} />
             <Route path="/alumni/services/create" element={<CreateServicePage />} />
             <Route path="/alumni/services/:id/edit" element={<EditServicePage />} />
+
+            {/* LaunchDeck Routes */}
+            <Route path="/launchdeck" element={<LaunchDeckListingPage />} />
+            <Route path="/launchdeck/pitch/:id" element={<PitchDetailPage />} />
+            <Route path="/launchdeck/create-pitch" element={<CreatePitchPage />} />
+            <Route path="/launchdeck/edit-pitch/:id" element={<EditPitchPage />} />
+            <Route path="/launchdeck/my-pitches" element={<MyPitchesPage />} />
+            <Route path="/launchdeck/mentorship-requests" element={<MentorshipRequestsPage />} />
+            <Route path="/admin/launchdeck" element={<AdminLaunchDeckPage />} />
 
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogPostPage />} />

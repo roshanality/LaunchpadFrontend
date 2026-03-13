@@ -2,7 +2,7 @@ import React from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Button } from '../components/ui/button'
-import { Users, MessageCircle, Shield, Loader2, Briefcase, GraduationCap, Calendar, BookOpen, IdCard, ListOrdered } from 'lucide-react'
+import { Users, MessageCircle, Shield, Loader2, Briefcase, GraduationCap, Calendar, BookOpen, IdCard, ListOrdered, Rocket } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { AdminStatsSection } from '../components/admin/AdminStatsSection'
 
@@ -187,6 +187,22 @@ export const AdminDashboard: React.FC = () => {
                 Manage “How we do it” timeline for each launchpad service
               </p>
               <Button className="w-full">Manage timelines</Button>
+            </CardContent>
+          </Card>
+          <Card className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => navigate('/admin/launchdeck')}>
+            <CardHeader>
+              <div className="flex items-center gap-3">
+                <div className="p-3 bg-orange-100 rounded-lg">
+                  <Rocket className="h-6 w-6 text-orange-600" />
+                </div>
+                <CardTitle>LaunchDeck</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 mb-4">
+                Manage startup pitches, investor interests, and mentorship
+              </p>
+              <Button className="w-full">Manage LaunchDeck</Button>
             </CardContent>
           </Card>
         </div>
