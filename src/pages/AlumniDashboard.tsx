@@ -5,7 +5,7 @@ import { Badge } from '../components/ui/badge'
 import { Button } from '../components/ui/button'
 import {
   Users, BookOpen, Bell, Briefcase, Loader2, Clock, CheckCircle,
-  AlertCircle, Rocket, TrendingUp, Calendar, PlusCircle, Eye, HandHeart
+  Rocket, TrendingUp, Calendar, PlusCircle, Eye, HandHeart
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { getApiUrl } from '../config'

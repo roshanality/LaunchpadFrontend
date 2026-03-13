@@ -10,7 +10,7 @@ interface InterestCardProps {
 }
 
 export const InterestCard: React.FC<InterestCardProps> = ({
-  pitchId, hasInterest, interestCount, isLoggedIn, onSubmitInterest
+  hasInterest, interestCount, isLoggedIn, onSubmitInterest
 }) => {
   const [showForm, setShowForm] = useState(false)
   const [message, setMessage] = useState('')

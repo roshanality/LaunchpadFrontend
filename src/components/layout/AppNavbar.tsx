@@ -15,7 +15,6 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from '../ui/resizable-navbar'
-import iitkgpLogo from '../../images/IITKGP.webp'
 import launchpadLogo from '../../images/LaunchpadLOGO.png'
 import EcellLogo from '../../../public/e_cell_long.png'
 
