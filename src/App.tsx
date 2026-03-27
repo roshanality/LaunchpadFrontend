@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast';
+import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components/layout/Layout'
+import SEO from './components/SEO'
 import { LandingPage } from './pages/LandingPage'
 import { AboutPage } from './pages/AboutPage'
 import { LoginPage } from './pages/LoginPage'
@@ -74,14 +76,16 @@ import { AdminLaunchDeckPage } from './pages/admin/AdminLaunchDeckPage'
 
 function App() {
   return (
-    <AuthProvider>
-      <Toaster
-        position="top-center"
-        reverseOrder={false}
-      />
-      <Router>
-        <Layout>
-          <Routes>
+    <HelmetProvider>
+      <AuthProvider>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
+        <Router>
+          <SEO page="home" />
+          <Layout>
+            <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -168,7 +172,8 @@ function App() {
           </Routes>
         </Layout>
       </Router>
-    </AuthProvider>
+      </AuthProvider>
+    </HelmetProvider>
   )
 }
 export default App

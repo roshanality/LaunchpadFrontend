@@ -1,0 +1,55 @@
+# KG Launchpad - Robots.txt
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin pages and private routes
+Disallow: /admin/
+Disallow: /dashboard
+Disallow: /student-dashboard
+Disallow: /founders-dashboard
+Disallow: /alumni/create
+Disallow: /alumni/edit
+Disallow: /alumni/mentees
+Disallow: /messages
+Disallow: /my-
+
+# Point to sitemap
+Sitemap: https://kgplaunchpad.com/sitemap.xml
+
+# Crawl delay for all bots
+Crawl-delay: 1
+
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slyrp
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baidu
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MojeekBot
+Disallow: /
