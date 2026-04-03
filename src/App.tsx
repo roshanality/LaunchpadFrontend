@@ -1,0 +1,179 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast';
+import { HelmetProvider } from 'react-helmet-async';
+import { Layout } from './components/layout/Layout'
+import SEO from './components/SEO'
+import { LandingPage } from './pages/LandingPage'
+import { AboutPage } from './pages/AboutPage'
+import { LoginPage } from './pages/LoginPage'
+import { RegisterPage } from './pages/RegisterPage'
+import { ProjectsPage } from './pages/ProjectsPage'
+import { ProjectDetailPage } from './pages/ProjectDetailPage'
+import { AlumniConnectPage } from './pages/AlumniConnectPage'
+import { BlogPage } from './pages/BlogPage'
+import { BlogPostPage } from './pages/BlogPostPage'
+import { StudentDashboard } from './pages/StudentDashboard'
+import { AlumniDashboard } from './pages/AlumniDashboard'
+import { ProfilePage } from './pages/ProfilePage'
+import { CreateProjectPage } from './pages/CreateProjectPage'
+import { CreateBlogPage } from './pages/CreateBlogPage'
+import { AlumniMenteesPage } from './pages/AlumniMenteesPage'
+import { AlumniProjectsPage } from './pages/AlumniProjectsPage'
+import { AlumniBlogsPage } from './pages/AlumniBlogsPage'
+import { EditBlogPage } from './pages/EditBlogPage'
+import { AllBlogsPage } from './pages/AllBlogsPage'
+import { MessagesPage } from './pages/MessagesPage'
+import { ChatPage } from './pages/ChatPage'
+import { AlumniProjectApplicationsPage } from './pages/AlumniProjectApplicationsPage'
+import { ProjectApplicationsPage } from './pages/ProjectApplicationsPage'
+import { StudentApplicationsPage } from './pages/StudentApplicationsPage'
+import { DashboardRouter } from './pages/DashboardRouter'
+import { MentorsPage } from './pages/MentorsPage'
+import { FindMentorsPage } from './pages/FindMentorsPage'
+import { AuthProvider } from './contexts/AuthContext'
+import Team from './pages/Team'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfService from './pages/TermsOfService'
+import { EditProjectPage } from './pages/EditProjectPage'
+import { AdminLoginPage } from './pages/AdminLoginPage'
+import { AdminDashboard } from './pages/AdminDashboard'
+import { AdminAllowingPage } from './pages/AdminAllowingPage'
+import { AdminSupportPage } from './pages/AdminSupportPage'
+import { SupportPage } from './pages/SupportPage'
+import { LaunchpadPage } from './pages/launchpad/LaunchpadPage'
+import { ServiceDetailPage } from './pages/launchpad/ServiceDetailPage'
+import { ProjectSubmissionPage } from './pages/launchpad/ProjectSubmissionPage'
+import { MyServicesPage } from './pages/launchpad/MyServicesPage'
+import { CreateServicePage } from './pages/launchpad/CreateServicePage'
+import { EditServicePage } from './pages/launchpad/EditServicePage'
+import { AdminServiceRequestsPage } from './pages/AdminServiceRequestsPage'
+import { AskServicesPage } from './pages/AskServicesPage'
+import { StudentServiceProfilePage } from './pages/StudentServiceProfilePage'
+import { ResourcesPage } from './pages/ResourcesPage'
+import { CoursesPage } from './pages/courses/CoursesPage'
+import { CourseDetailsPage } from './pages/courses/CourseDetailsPage'
+import { MyCoursesPage } from './pages/courses/MyCoursesPage'
+import { AdminCoursesPage } from './pages/admin/AdminCoursesPage'
+import { AdminCourseManagementPage } from './pages/admin/AdminCourseManagementPage'
+import { AdminUserManagementPage } from './pages/admin/AdminUserManagementPage'
+import { AdminStudentVerificationPage } from './pages/admin/AdminStudentVerificationPage'
+import { AdminServiceTimelinePage } from './pages/admin/AdminServiceTimelinePage'
+import NavbarDemo from './pages/NavbarDemo'
+
+import { AdminEventsPage } from './pages/admin/AdminEventsPage'
+import { AdminEventDetailsPage } from './pages/admin/AdminEventDetailsPage'
+import { AdminResourcesPage } from './pages/admin/AdminResourcesPage'
+import { EventsPage } from './pages/events/EventsPage'
+import { EventDetailPage } from './pages/events/EventDetailPage'
+import { MyEventsPage } from './pages/events/MyEventsPage'
+import { LaunchDeckPage as LaunchDeckListingPage } from './pages/launchdeck/LaunchDeckPage'
+import { PitchDetailPage } from './pages/launchdeck/PitchDetailPage'
+import { CreatePitchPage } from './pages/launchdeck/CreatePitchPage'
+import { EditPitchPage } from './pages/launchdeck/EditPitchPage'
+import { MyPitchesPage } from './pages/launchdeck/MyPitchesPage'
+import { MentorshipRequestsPage } from './pages/launchdeck/MentorshipRequestsPage'
+import { AdminLaunchDeckPage } from './pages/admin/AdminLaunchDeckPage'
+
+function App() {
+  return (
+    <HelmetProvider>
+      <AuthProvider>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
+        <Router>
+          <SEO page="home" />
+          <Layout>
+            <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:id" element={<ProjectDetailPage />} />
+            <Route path="/alumni/projects/:id/edit" element={<EditProjectPage />} />
+            <Route path="/mentors" element={<MentorsPage />} />
+            <Route path="/find-mentors" element={<FindMentorsPage />} />
+            <Route path="/alumni-connect" element={<AlumniConnectPage />} />
+
+            {/* Launchpad Routes */}
+            <Route path="/launchpad" element={<LaunchpadPage />} />
+            <Route path="/launchpad/services/:id" element={<ServiceDetailPage />} />
+            <Route path="/launchpad/submit-project" element={<ProjectSubmissionPage />} />
+
+            {/* Manage Services Routes */}
+            <Route path="/alumni/services" element={<MyServicesPage />} />
+            <Route path="/alumni/services/create" element={<CreateServicePage />} />
+            <Route path="/alumni/services/:id/edit" element={<EditServicePage />} />
+
+            {/* LaunchDeck Routes */}
+            <Route path="/launchdeck" element={<LaunchDeckListingPage />} />
+            <Route path="/launchdeck/pitch/:id" element={<PitchDetailPage />} />
+            <Route path="/launchdeck/create-pitch" element={<CreatePitchPage />} />
+            <Route path="/launchdeck/edit-pitch/:id" element={<EditPitchPage />} />
+            <Route path="/launchdeck/my-pitches" element={<MyPitchesPage />} />
+            <Route path="/launchdeck/mentorship-requests" element={<MentorshipRequestsPage />} />
+            <Route path="/admin/launchdeck" element={<AdminLaunchDeckPage />} />
+
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:id" element={<BlogPostPage />} />
+
+            {/* Courses Routes */}
+            <Route path="/courses" element={<CoursesPage />} />
+            <Route path="/courses/:id" element={<CourseDetailsPage />} />
+            <Route path="/my-courses" element={<MyCoursesPage />} />
+
+            <Route path="/alumni/blogs/:id/edit" element={<EditBlogPage />} />
+            <Route path="/student-dashboard" element={<StudentDashboard />} />
+            <Route path="/ask-services" element={<AskServicesPage />} />
+            <Route path="/student-service-profile" element={<StudentServiceProfilePage />} />
+            <Route path="/resources/*" element={<ResourcesPage />} />
+            <Route path="/student/applications" element={<StudentApplicationsPage />} />
+            <Route path="/founders-dashboard" element={<AlumniDashboard />} />
+            <Route path="/dashboard" element={<DashboardRouter />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/profile/:id" element={<ProfilePage />} />
+            <Route path="/alumni/create-project" element={<CreateProjectPage />} />
+            <Route path="/alumni/create-blog" element={<CreateBlogPage />} />
+            <Route path="/alumni/mentees" element={<AlumniMenteesPage />} />
+            <Route path="/alumni/projects" element={<AlumniProjectsPage />} />
+            <Route path="/alumni/projects/:id/applications" element={<ProjectApplicationsPage />} />
+            <Route path="/alumni/blogs" element={<AlumniBlogsPage />} />
+            <Route path="/all-blogs" element={<AllBlogsPage />} />
+            <Route path="/messages" element={<MessagesPage />} />
+            <Route path="/messages/:id" element={<ChatPage />} />
+            <Route path="/alumni/project-applications" element={<AlumniProjectApplicationsPage />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/support" element={<SupportPage />} />
+            <Route path="/admin/login" element={<AdminLoginPage />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/allowing" element={<AdminAllowingPage />} />
+            <Route path="/admin/support" element={<AdminSupportPage />} />
+            <Route path="/admin/launchpad/requests" element={<AdminServiceRequestsPage />} />
+            <Route path="/admin/users" element={<AdminUserManagementPage />} />
+            <Route path="/admin/student-verification" element={<AdminStudentVerificationPage />} />
+            <Route path="/admin/service-timeline" element={<AdminServiceTimelinePage />} />
+
+            <Route path="/admin/courses" element={<AdminCoursesPage />} />
+            <Route path="/admin/courses/:id" element={<AdminCourseManagementPage />} />
+
+            {/* Events Routes */}
+            <Route path="/events" element={<EventsPage />} />
+            <Route path="/events/:id" element={<EventDetailPage />} />
+            <Route path="/my-events" element={<MyEventsPage />} />
+            <Route path="/admin/events" element={<AdminEventsPage />} />
+            <Route path="/admin/events/:id" element={<AdminEventDetailsPage />} />
+            <Route path="/admin/resources" element={<AdminResourcesPage />} />
+
+            <Route path="/navbar-demo" element={<NavbarDemo />} />
+          </Routes>
+        </Layout>
+      </Router>
+      </AuthProvider>
+    </HelmetProvider>
+  )
+}
+export default App
