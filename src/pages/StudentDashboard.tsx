@@ -35,7 +35,7 @@ export const StudentDashboard: React.FC = () => {
       if (!token) return
 
       try {
-        const verRes = await fetch(getApiUrl('/api/students/verification'), {
+        const verRes = await fetch(getApiUrl('/api/profile/verification'), {
           headers: { Authorization: `Bearer ${token}` },
         })
         if (verRes.ok) {
@@ -244,7 +244,7 @@ export const StudentDashboard: React.FC = () => {
                         const formData = new FormData()
                         if (rollNumber) formData.append('roll_number', rollNumber)
                         if (idCardFile) formData.append('id_card', idCardFile)
-                        const res = await fetch(getApiUrl('/api/students/verification'), {
+                        const res = await fetch(getApiUrl('/api/profile/verification'), {
                           method: 'POST',
                           headers: { Authorization: `Bearer ${token}` },
                           body: formData,

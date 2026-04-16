@@ -58,7 +58,9 @@ import { AdminCourseManagementPage } from './pages/admin/AdminCourseManagementPa
 import { AdminUserManagementPage } from './pages/admin/AdminUserManagementPage'
 import { AdminStudentVerificationPage } from './pages/admin/AdminStudentVerificationPage'
 import { AdminServiceTimelinePage } from './pages/admin/AdminServiceTimelinePage'
+import { CourseLearnPage } from './pages/courses/CourseLearnPage'
 import NavbarDemo from './pages/NavbarDemo'
+
 
 import { AdminEventsPage } from './pages/admin/AdminEventsPage'
 import { AdminEventDetailsPage } from './pages/admin/AdminEventDetailsPage'
@@ -122,7 +124,9 @@ function App() {
             {/* Courses Routes */}
             <Route path="/courses" element={<CoursesPage />} />
             <Route path="/courses/:id" element={<CourseDetailsPage />} />
+            <Route path="/courses/:id/learn" element={<CourseLearnPage />} />
             <Route path="/my-courses" element={<MyCoursesPage />} />
+
 
             <Route path="/alumni/blogs/:id/edit" element={<EditBlogPage />} />
             <Route path="/student-dashboard" element={<StudentDashboard />} />

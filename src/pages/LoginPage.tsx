@@ -97,7 +97,7 @@ export const LoginPage = () => {
       return
     }
 
-    const success = await login(formData.email, formData.password)
+    const success = await login(formData.email, formData.password, setError)
     if (success) {
       navigate('/dashboard')
     } else {

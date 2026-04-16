@@ -14,6 +14,7 @@ import { Label } from '../../components/ui/label'
 import { Textarea } from '../../components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../components/ui/select'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs'
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from '../../components/ui/dialog'
 
 export const AdminCourseManagementPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
@@ -22,6 +23,9 @@ export const AdminCourseManagementPage: React.FC = () => {
     const [students, setStudents] = useState<Enrollment[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isSaving, setIsSaving] = useState(false)
+    const [reviewStudent, setReviewStudent] = useState<Enrollment | null>(null)
+    const [reviewMessage, setReviewMessage] = useState('')
+    const [isSubmittingReview, setIsSubmittingReview] = useState(false)
 
     // Form State
     const [formData, setFormData] = useState<Partial<Course>>({})
@@ -82,6 +86,39 @@ export const AdminCourseManagementPage: React.FC = () => {
             toast.error('Error saving course')
         } finally {
             setIsSaving(false)
+        }
+    }
+
+    const handleReviewAction = async (status: 'approved' | 'rejected') => {
+        if (!reviewStudent) return
+        setIsSubmittingReview(true)
+        try {
+            const res = await fetch(getApiUrl(`/api/admin/courses/enrollments/${reviewStudent.id}/status`), {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ status, message: reviewMessage })
+            })
+
+            if (res.ok) {
+                toast.success(`Enrollment ${status} successfully`)
+                setStudents(prev => prev.map(s => 
+                    s.id === reviewStudent.id 
+                    ? { ...s, status, payment_status: status === 'approved' ? 'paid' : s.payment_status } 
+                    : s
+                ))
+                setReviewStudent(null)
+                setReviewMessage('')
+            } else {
+                toast.error(`Failed to ${status} enrollment`)
+            }
+        } catch (error) {
+            console.error(error)
+            toast.error('An error occurred')
+        } finally {
+            setIsSubmittingReview(false)
         }
     }
 
@@ -250,6 +287,7 @@ export const AdminCourseManagementPage: React.FC = () => {
                                                 }>
                                                     {student.status}
                                                 </Badge>
+                                                <Button size="sm" variant="outline" onClick={() => { setReviewStudent(student); setReviewMessage(''); }}>Review</Button>
                                             </div>
                                         </div>
                                     ))}
@@ -263,6 +301,74 @@ export const AdminCourseManagementPage: React.FC = () => {
                     </Card>
                 </TabsContent>
             </Tabs>
+            
+            {/* Student Review Modal */}
+            <Dialog open={!!reviewStudent} onOpenChange={(open) => !open && setReviewStudent(null)}>
+                <DialogContent className="sm:max-w-lg">
+                    <DialogHeader>
+                        <DialogTitle>Review Enrollment Application</DialogTitle>
+                        <DialogDescription>
+                            Review student details and payment screenshot for {reviewStudent?.name}.
+                        </DialogDescription>
+                    </DialogHeader>
+                    
+                    {reviewStudent && (
+                        <div className="space-y-4 py-4">
+                            <div className="flex justify-between text-sm">
+                                <span className="text-gray-500">Email:</span>
+                                <span className="font-medium">{reviewStudent.email}</span>
+                            </div>
+                            <div className="flex justify-between text-sm">
+                                <span className="text-gray-500">Date:</span>
+                                <span className="font-medium">{new Date(reviewStudent.enrolled_at).toLocaleString()}</span>
+                            </div>
+
+                            <div className="border border-gray-200 rounded-lg p-2 flex justify-center bg-gray-50">
+                                {reviewStudent.payment_screenshot ? (
+                                    <div className="space-y-2 text-center w-full">
+                                        <p className="text-sm font-medium">Payment Screenshot</p>
+                                        <img 
+                                            src={getApiUrl(`/api/payment-screenshot/${reviewStudent.payment_screenshot}`)}
+                                            alt="Payment Screenshot"
+                                            className="max-w-full h-auto max-h-64 object-contain mx-auto rounded border" 
+                                        />
+                                    </div>
+                                ) : (
+                                    <p className="text-sm text-gray-500 py-4">No payment screenshot uploaded.</p>
+                                )}
+                            </div>
+
+                            <div className="space-y-2">
+                                <Label>Message to Student</Label>
+                                <Textarea 
+                                    placeholder="Enter your approval/rejection reason here..."
+                                    value={reviewMessage}
+                                    onChange={(e) => setReviewMessage(e.target.value)}
+                                    rows={3}
+                                />
+                            </div>
+                        </div>
+                    )}
+                    
+                    <DialogFooter className="flex gap-2 justify-end w-full sm:justify-end">
+                        <Button variant="outline" onClick={() => setReviewStudent(null)}>Cancel</Button>
+                        <Button 
+                            variant="destructive"
+                            onClick={() => handleReviewAction('rejected')}
+                            disabled={isSubmittingReview || !reviewMessage}
+                        >
+                            Reject
+                        </Button>
+                        <Button 
+                            className="bg-indigo-600 hover:bg-indigo-700"
+                            onClick={() => handleReviewAction('approved')}
+                            disabled={isSubmittingReview}
+                        >
+                            Approve
+                        </Button>
+                    </DialogFooter>
+                </DialogContent>
+            </Dialog>
         </div>
     )
 }

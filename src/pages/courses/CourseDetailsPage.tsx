@@ -12,8 +12,9 @@ import {
 import { toast } from 'react-hot-toast'
 import { 
     Loader2, Clock, CheckCircle, Users, Play, Award, Star, User, 
-    ChevronDown, ChevronRight, Monitor, FileText, Download, Globe, Lock
+    ChevronDown, ChevronRight, Monitor, FileText, Download, Globe, Lock, XCircle
 } from 'lucide-react'
+import { Input } from '../../components/ui/input'
 
 export const CourseDetailsPage: React.FC = () => {
     const { id } = useParams<{ id: string }>()
@@ -23,13 +24,46 @@ export const CourseDetailsPage: React.FC = () => {
     const [isLoading, setIsLoading] = useState(true)
     const [isEnrollModalOpen, setIsEnrollModalOpen] = useState(false)
     const [isProcessingEnrollment, setIsProcessingEnrollment] = useState(false)
-    const [isEnrolled, setIsEnrolled] = useState(false)
     const [activeTab, setActiveTab] = useState<'about' | 'outline' | 'outcomes'>('about')
     const [expandedModules, setExpandedModules] = useState<number[]>([0])
+    const [paymentScreenshot, setPaymentScreenshot] = useState<File | null>(null)
+    const [enrollmentStatus, setEnrollmentStatus] = useState<'none' | 'pending' | 'approved' | 'rejected'>('none')
+    const [isStatusLoading, setIsStatusLoading] = useState(false)
+
+
+
 
     useEffect(() => {
-        if (id) fetchCourseDetails()
-    }, [id])
+        if (id) {
+            fetchCourseDetails()
+            if (token) {
+                fetchEnrollmentStatus()
+            } else {
+                setEnrollmentStatus('none')
+                setIsStatusLoading(false)
+            }
+        }
+    }, [id, token])
+
+
+    const fetchEnrollmentStatus = async () => {
+        setIsStatusLoading(true)
+        try {
+            const res = await fetch(getApiUrl(`/api/courses/${id}/enrollment-status`), {
+                headers: { 'Authorization': `Bearer ${token}` }
+            })
+            if (res.ok) {
+                const data = await res.json()
+                setEnrollmentStatus(data.status || 'none')
+            }
+        } catch (error) {
+            console.error('Error fetching enrollment status:', error)
+        } finally {
+            setIsStatusLoading(false)
+        }
+    }
+
+
 
     const fetchCourseDetails = async () => {
         setIsLoading(true)
@@ -60,24 +94,33 @@ export const CourseDetailsPage: React.FC = () => {
     }
 
     const handleEnrollConfirm = async () => {
+        if (course?.price && Number(course.price) > 0 && !paymentScreenshot) {
+            toast.error('Please upload your payment screenshot to proceed')
+            return
+        }
         setIsProcessingEnrollment(true)
         try {
+            const formData = new FormData()
+            if (paymentScreenshot) {
+                formData.append('screenshot', paymentScreenshot)
+            }
+
             const res = await fetch(getApiUrl(`/api/courses/${id}/enroll`), {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${token}`,
-                    'Content-Type': 'application/json'
-                }
+                    'Authorization': `Bearer ${token}`
+                },
+                body: formData
             })
 
             if (res.ok) {
                 toast.success('Application submitted! Waiting for approval.')
                 setIsEnrollModalOpen(false)
-                setIsEnrolled(true)
+                setEnrollmentStatus('pending')
             } else {
                 const errorData = await res.json()
                 if (errorData.error?.includes('Already enrolled')) {
-                    setIsEnrolled(true)
+                    setEnrollmentStatus('approved')
                     setIsEnrollModalOpen(false)
                 } else {
                     toast.error(errorData.error || 'Application failed')
@@ -574,16 +617,57 @@ export const CourseDetailsPage: React.FC = () => {
                                         )}
                                     </div>
                                     
-                                    {/* Enroll Button */}
-                                    {isEnrolled ? (
+                                    {/* Enroll Button / Status */}
+                                    {isStatusLoading ? (
+                                        <div className="flex justify-center items-center py-5 mb-5 bg-gray-50 rounded-lg border border-gray-100">
+                                            <Loader2 className="h-6 w-6 animate-spin text-indigo-600" />
+                                            <span className="ml-2 text-sm text-gray-500 font-medium">Checking status...</span>
+                                        </div>
+                                    ) : enrollmentStatus === 'approved' ? (
+
+                                        <div className="mb-5">
+                                            <div className="bg-green-50 border border-green-200 rounded-lg p-3 text-center">
+                                                <div className="flex items-center justify-center gap-2 text-green-700 mb-1">
+                                                    <CheckCircle className="h-4 w-4" />
+                                                    <span className="font-medium text-sm">Enrolled</span>
+                                                </div>
+                                                <p className="text-green-600 text-xs">You have full access to this course</p>
+                                            </div>
+                                            <Button 
+                                                size="lg" 
+                                                className="w-full bg-green-600 hover:bg-green-700 text-white py-5 mt-4 text-base font-semibold rounded-lg"
+                                                onClick={() => navigate(`/courses/${id}/learn`)}
+                                            >
+                                                Start Learning
+                                            </Button>
+                                        </div>
+                                    ) : enrollmentStatus === 'pending' ? (
                                         <div className="mb-5">
                                             <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-center">
                                                 <div className="flex items-center justify-center gap-2 text-amber-700 mb-1">
                                                     <Clock className="h-4 w-4" />
-                                                    <span className="font-medium text-sm">Applied</span>
+                                                    <span className="font-medium text-sm">Application Pending</span>
                                                 </div>
-                                                <p className="text-amber-600 text-xs">Waiting for approval</p>
+                                                <p className="text-amber-600 text-xs">Waiting for admin verification</p>
                                             </div>
+                                        </div>
+                                    ) : enrollmentStatus === 'rejected' ? (
+                                        <div className="mb-5">
+                                            <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
+                                                <div className="flex items-center justify-center gap-2 text-red-700 mb-1">
+                                                    <XCircle className="h-4 w-4" />
+                                                    <span className="font-medium text-sm">Application Rejected</span>
+                                                </div>
+                                                <p className="text-red-600 text-xs">Please contact support for details</p>
+                                            </div>
+                                            <Button 
+                                                size="lg" 
+                                                variant="outline"
+                                                className="w-full mt-4 py-5 text-base font-semibold rounded-lg"
+                                                onClick={handleEnrollClick}
+                                            >
+                                                Re-apply
+                                            </Button>
                                         </div>
                                     ) : (
                                         <Button 
@@ -635,6 +719,28 @@ export const CourseDetailsPage: React.FC = () => {
                                 {course.price ? `₹${course.price}` : 'Free'}
                             </span>
                         </div>
+
+                        {course.price && Number(course.price) > 0 && (
+                            <div className="border border-gray-200 rounded-lg p-4 space-y-4">
+                                <h3 className="font-medium text-gray-800 text-sm">Step 1: Make Payment</h3>
+                                <div className="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg">
+                                    {/* Placeholder QR - you can replace this with your actual QR code image URL later */}
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=test_upi" alt="Payment QR" className="w-32 h-32 mb-2" />
+                                    <p className="text-xs text-gray-500 text-center">Scan QR code to pay ₹{course.price}</p>
+                                </div>
+                                
+                                <h3 className="font-medium text-gray-800 text-sm">Step 2: Upload Screenshot</h3>
+                                <div>
+                                    <Input 
+                                        type="file" 
+                                        accept="image/png, image/jpeg, image/jpg" 
+                                        onChange={(e) => setPaymentScreenshot(e.target.files?.[0] || null)}
+                                    />
+                                    <p className="text-xs text-gray-500 mt-1">Upload JPG/PNG screenshot of successful transaction.</p>
+                                </div>
+                            </div>
+                        )}
+
                         <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
                             <p className="text-sm text-amber-700">
                                 <strong>Note:</strong> After applying, your status will be "Waiting for Approval".
