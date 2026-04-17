@@ -10,7 +10,7 @@ import {
   Twitter,
 } from 'lucide-react'
 import kgp_logo from "../../images/kgp_logo.png"
-import LaunchpadLogo from "../../images/WhatsApp Image 2026-04-16 at 22.19.48 copy.jpeg"
+import LaunchpadLogo from "../../images/kgpForgeLogo.png"
 import dvlaunchLogo from "../../images/dvlaunch_logo.jpeg"
 
 const data = {
@@ -40,7 +40,7 @@ const data = {
     address: 'IIT Kharagpur, West Bengal',
   },
   company: {
-    name: 'KGP Launchpad',
+    name: 'KGP Forge',
     description:
       "Connecting students with alumni, showcasing innovation, and building the future of IIT Kharagpur's startup ecosystem.",
     logo: kgp_logo,
@@ -82,20 +82,20 @@ const contactInfo = [
 export const Footer: React.FC = () => {
   return (
     <footer className="bg-white mt-16 w-full place-self-end rounded-t-xl border-t">
-      <div className="container mx-auto px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div className="container mx-auto px-4 pt-8 pb-6 sm:px-6 lg:px-8 lg:pt-24 lg:pb-12">
+        <div className="grid grid-cols-1 gap-4 lg:gap-8 lg:grid-cols-3">
           <div>
-            <div className="text-primary flex justify-center gap-2 sm:justify-start items-center flex-wrap">
+            <div className="text-primary flex justify-start gap-2 items-center flex-wrap">
               <img
                 src={LaunchpadLogo}
-                alt="KGP Launchpad"
-                className="h-24 w-auto object-contain"
+                alt="KGP Forge"
+                className="h-14 md:h-24 w-auto object-contain"
               />
-              <span className="text-2xl font-semibold">
+              <span className="text-xl md:text-2xl font-semibold">
                 {data.company.name}
               </span>
             </div>
-            <div className="mt-4 flex justify-center sm:justify-start items-center gap-2">
+            <div className="mt-4 flex justify-start items-center gap-2">
               <span className="text-sm text-muted-foreground">In partnership with</span>
               <div>
               <a
@@ -115,11 +115,11 @@ export const Footer: React.FC = () => {
              
             </div>
 
-            <p className="text-muted-foreground mt-6 max-w-md text-center leading-relaxed sm:max-w-xs sm:text-left">
+            <p className="text-muted-foreground mt-4 max-w-md text-left leading-relaxed sm:max-w-xs">
               {data.company.description}
             </p>
 
-            <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
+            <ul className="mt-6 flex justify-start gap-4">
               {socialLinks.map(({ icon: Icon, label, href }) => (
                 <li key={label}>
                   <Link
@@ -134,8 +134,8 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
-            <div className="text-center sm:text-left">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 lg:col-span-2">
+            <div className="text-left">
               <p className="text-lg font-medium">About Us</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {aboutLinks.map(({ text, href }) => (
@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="text-center sm:text-left">
+            <div className="text-left">
               <p className="text-lg font-medium">Platform</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {platformLinks.map(({ text, href }) => (
@@ -167,7 +167,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="text-center sm:text-left">
+            <div className="text-left">
               <p className="text-lg font-medium">Helpful Links</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {helpfulLinks.map(({ text, href }) => (
@@ -183,7 +183,7 @@ export const Footer: React.FC = () => {
               </ul>
             </div>
 
-            <div className="text-center sm:text-left">
+            <div className="text-left">
               <p className="text-lg font-medium">Contact Us</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {contactInfo.map(({ icon: Icon, text, isAddress }) => (

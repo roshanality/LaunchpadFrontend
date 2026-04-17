@@ -393,7 +393,7 @@ export function ResourcesPage() {
                     <div className="text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
                             <Sparkles className="h-4 w-4 text-blue-400" />
-                            <span className="text-sm text-gray-300">Powered by KGP Launchpad</span>
+                            <span className="text-sm text-gray-300">Powered by KGP Forge</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-extrabold mb-6">
                             <span className="bg-gradient-to-r from-white via-blue-100 to-gray-300 bg-clip-text text-transparent">

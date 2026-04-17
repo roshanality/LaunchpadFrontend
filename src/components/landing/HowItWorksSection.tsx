@@ -80,7 +80,7 @@ export const HowItWorksSection: React.FC = () => {
         <div className="text-center mb-16">
           <span className="text-blue-600 font-semibold uppercase tracking-wider text-sm">How It Works</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-3 bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
-            Your Journey on KGP Launchpad
+            Your Journey on KGP Forge
           </h2>
           <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
             Empowering visionary creators and driven builders to collaborate, grow, and bring incredible ideas to life together.

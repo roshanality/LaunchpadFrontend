@@ -15,8 +15,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from '../ui/resizable-navbar'
-import launchpadLogo from '../../images/WhatsApp Image 2026-04-16 at 22.19.48 copy.jpeg'
-import EcellLogo from '../../../public/e_cell_long.png'
+import kgpForgeLogo from '../../images/kgpForgeLogo.png'
 
 
 import {
@@ -127,14 +126,14 @@ export const AppNavbar: React.FC = () => {
                 "hidden md:flex"
               )}>
 
-                <img src={launchpadLogo} alt="KGP Launchpad Startup Accelerator" className="h-16 object-contain" />
-                <img src={EcellLogo} alt="E-Cell IIT Kharagpur" className="h-10 object-contain" />
+                <img src={kgpForgeLogo} alt="KGP Forge Startup Accelerator" className="h-16 object-contain" />
+                <img src="/e_cell_long.png" alt="E-Cell IIT Kharagpur" className="h-10 object-contain" />
 
               </div>
               {/* Mobile: show Launchpad logo */}
               <img
-                src={launchpadLogo}
-                alt="KGP Launchpad"
+                src={kgpForgeLogo}
+                alt="KGP Forge"
                 className="h-12 object-contain md:hidden flex-shrink-0"
               />
             </Link>
@@ -218,7 +217,7 @@ export const AppNavbar: React.FC = () => {
         <MobileNav visible={isMobileMenuOpen} className="lg:hidden">
           <MobileNavHeader>
             <Link to="/" className="flex items-center gap-2">
-              <img src={launchpadLogo} alt="KGP Launchpad" className="h-12 object-contain" />
+              <img src={kgpForgeLogo} alt="KGP Forge" className="h-12 object-contain" />
             </Link>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}

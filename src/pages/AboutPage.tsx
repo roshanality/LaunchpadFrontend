@@ -45,7 +45,7 @@ export function AboutPage() {
 
         <div className="w-full relative z-10 min-h-[70vh]">
           <Carousel hideControls autoPlayInterval={5000}>
-            {/* Slide 1: About KGP Launchpad — image background */}
+            {/* Slide 1: About KGP Forge — image background */}
             <div className="relative w-full min-h-[70vh] flex items-center justify-center">
               <img
                 src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1920&auto=format&fit=crop"
@@ -165,7 +165,7 @@ export function AboutPage() {
       <section className="py-16 bg-slate-50 border-t border-slate-100">
         <Timeline
           heading="Our journey"
-          subheading="From idea to platform — here’s how KGP Launchpad grew to connect founders and students."
+          subheading="From idea to platform — here’s how KGP Forge grew to connect founders and students."
           data={[
             {
               title: "2024",
@@ -257,7 +257,7 @@ export function AboutPage() {
               content: (
                 <div>
                   <p className="text-slate-700 text-sm md:text-base font-normal mb-4">
-                    KGP Launchpad started with a simple goal: help founders get work done at a fair cost
+                    KGP Forge started with a simple goal: help founders get work done at a fair cost
                     and give students real experience. Here’s what we shipped first.
                   </p>
                   <div className="mb-8 space-y-2">

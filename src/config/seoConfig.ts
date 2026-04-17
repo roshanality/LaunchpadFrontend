@@ -3,7 +3,7 @@
  * Centralized metadata for all pages and canonical URLs
  */
 
-const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://kgplaunchpad.com';
+const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://kgpforge.com';
 const SITE_NAME = 'KG Launchpad';
 const SITE_DESCRIPTION = 'KG Launchpad connects students with mentors, projects, courses, and startup opportunities. Join India\'s premier entrepreneurial ecosystem.';
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;

@@ -167,7 +167,7 @@ export const CourseLearnPage: React.FC = () => {
 
                 <div className="text-center mt-12 mb-20">
                     <p className="text-slate-400 text-sm">
-                        KGP Launchpad Educational Platform &bull; IIT Kharagpur
+                        KGP Forge Educational Platform &bull; IIT Kharagpur
                     </p>
                 </div>
             </div>
