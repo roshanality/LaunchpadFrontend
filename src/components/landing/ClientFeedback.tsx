@@ -54,7 +54,7 @@ export function ClientFeedback() {
                     <p className="text-gray-500 text-sm">Founder, TechVentures</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_priya.png"
                     alt="Priya Sharma"
                     className="w-12 h-12 rounded-full object-cover border border-gray-200"
                   />
@@ -73,7 +73,7 @@ export function ClientFeedback() {
                     <p className="text-blue-100 text-sm">Founder, Kintsugi Labs</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_arjun.png"
                     alt="Arjun Mehta"
                     className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
                   />
@@ -96,7 +96,7 @@ export function ClientFeedback() {
                     <p className="text-gray-400 text-sm">Founder, Odeao Labs</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop"
+                    src="/avatar_ananya.png"
                     alt="Ananya Reddy"
                     className="w-12 h-12 rounded-full object-cover border border-gray-700"
                   />
@@ -115,7 +115,7 @@ export function ClientFeedback() {
                     <p className="text-gray-400 text-sm">Founder, Labsbo</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_rohan.png"
                     alt="Rohan Verma"
                     className="w-12 h-12 rounded-full object-cover border border-gray-700"
                   />
@@ -136,7 +136,7 @@ export function ClientFeedback() {
                     <p className="text-gray-400 text-sm">Founder, Boxefi</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1740102074295-c13fae3e4f8a?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_kavya.png"
                     alt="Kavya Nair"
                     className="w-12 h-12 rounded-full object-cover border border-gray-700"
                   />
@@ -156,7 +156,7 @@ export function ClientFeedback() {
                     <p className="text-blue-100 text-sm">Founder, Odeao Labs</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1563237023-b1e970526dcb?q=80&w=765&auto=format&fit=crop"
+                    src="/avatar_vikram.png"
                     alt="Vikram Singh"
                     className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
                   />
@@ -177,7 +177,7 @@ export function ClientFeedback() {
                     <p className="text-gray-500 text-sm">CTO, Spectrum</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_aditya.png"
                     alt="Aditya Krishnan"
                     className="w-12 h-12 rounded-full object-cover border border-gray-200"
                   />

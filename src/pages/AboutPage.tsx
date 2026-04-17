@@ -48,7 +48,7 @@ export function AboutPage() {
             {/* Slide 1: About KGP Launchpad — image background */}
             <div className="relative w-full min-h-[70vh] flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=1920&auto=format&fit=crop"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
                 aria-hidden
@@ -70,7 +70,7 @@ export function AboutPage() {
             {/* Slide 2: Founders & Students */}
             <div className="relative w-full min-h-[70vh] flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&auto=format&fit=crop"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
                 aria-hidden
@@ -92,7 +92,7 @@ export function AboutPage() {
             {/* Slide 3: Community First */}
             <div className="relative w-full min-h-[70vh] flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1920&auto=format&fit=crop"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
                 aria-hidden
@@ -114,7 +114,7 @@ export function AboutPage() {
             {/* Slide 4: Our Network */}
             <div className="relative w-full min-h-[70vh] flex items-center justify-center">
               <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1920&auto=format&fit=crop"
                 alt=""
                 className="absolute inset-0 w-full h-full object-cover"
                 aria-hidden
@@ -177,28 +177,28 @@ export function AboutPage() {
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <img
-                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&auto=format&fit=crop"
                       alt="Team collaboration"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=500&auto=format&fit=crop"
                       alt="Community"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1513258496099-48168024aec0?w=500&auto=format&fit=crop"
                       alt="Startup"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&auto=format&fit=crop"
                       alt="Workspace"
                       width={500}
                       height={500}
@@ -221,28 +221,28 @@ export function AboutPage() {
                   </p>
                   <div className="grid grid-cols-2 gap-4">
                     <img
-                      src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=500&auto=format&fit=crop"
                       alt="Analytics"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=500&auto=format&fit=crop"
                       alt="Events"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&auto=format&fit=crop"
                       alt="Knowledge"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1542596594-649edbc13630?w=500&auto=format&fit=crop"
                       alt="Meeting"
                       width={500}
                       height={500}
@@ -284,28 +284,28 @@ export function AboutPage() {
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <img
-                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop"
                       alt="Office"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=500&auto=format&fit=crop"
                       alt="Collaboration"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1573164713988-8665fc963095?w=500&auto=format&fit=crop"
                       alt="Team"
                       width={500}
                       height={500}
                       className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-lg border border-slate-100"
                     />
                     <img
-                      src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=500&auto=format&fit=crop"
+                      src="https://images.unsplash.com/photo-1552581234-26160f608093?w=500&auto=format&fit=crop"
                       alt="Workshop"
                       width={500}
                       height={500}

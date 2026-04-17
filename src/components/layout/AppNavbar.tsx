@@ -15,8 +15,8 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from '../ui/resizable-navbar'
-import launchpadLogo from '../../images/LaunchpadLOGO.png'
-import EcellLogo from '../../../public/e_cell_long.png'
+import launchpadLogo from '../../images/WhatsApp Image 2026-04-16 at 22.19.48 copy.jpeg'
+
 
 import {
   useScroll,
@@ -127,7 +127,7 @@ export const AppNavbar: React.FC = () => {
               )}>
 
                 <img src={launchpadLogo} alt="KGP Launchpad Startup Accelerator" className="h-16 object-contain" />
-                <img src={EcellLogo} alt="E-Cell" className="h-10 object-contain" />
+
               </div>
               {/* Mobile: show Launchpad logo */}
               <img

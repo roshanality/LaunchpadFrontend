@@ -16,7 +16,7 @@ const successStories: CardItem[] = [
     description:
       "A founder needed a working prototype for investors. A team of three IIT KGP students delivered the MVP on time and within budget through KGP Launchpad.",
     imgSrc:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&auto=format&fit=crop&q=60",
+      "/bangalore_it_office.png",
     icon: <Rocket size={24} />,
     linkHref: "#",
   },
@@ -26,7 +26,7 @@ const successStories: CardItem[] = [
     description:
       "A student-led team built and shipped a fintech feature for an alumni-founded startup. They learned production workflows and got strong referrals.",
     imgSrc:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop&q=60",
+      "/indian_fintech_team.png",
     icon: <GraduationCap size={24} />,
     linkHref: "#",
   },
@@ -36,7 +36,7 @@ const successStories: CardItem[] = [
     description:
       "After completing two projects as a developer on KGP Launchpad, a final-year student was offered a full-time role at the same startup.",
     imgSrc:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&auto=format&fit=crop&q=60",
+      "/indian_developer_hired.png",
     icon: <Briefcase size={24} />,
     linkHref: "#",
   },
@@ -46,7 +46,7 @@ const successStories: CardItem[] = [
     description:
       "A B2B SaaS founder scaled the product roadmap by onboarding two KGP Launchpad developers part-time. Quality and communication exceeded expectations.",
     imgSrc:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&auto=format&fit=crop&q=60",
+      "/indian_student.png",
     icon: <TrendingUp size={24} />,
     linkHref: "#",
   },
@@ -56,7 +56,7 @@ const successStories: CardItem[] = [
     description:
       "A solo founder used KGP Launchpad to get design and dev support for her D2C brand. The site went live in a month and drove the first sales.",
     imgSrc:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&auto=format&fit=crop&q=60",
+      "/indian_girl_founder.png",
     icon: <Target size={24} />,
     linkHref: "#",
   },
@@ -66,7 +66,7 @@ const successStories: CardItem[] = [
     description:
       "Students from different departments formed a team on the platform, delivered a full-stack project for an alumni, and continued as a freelance unit.",
     imgSrc:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&auto=format&fit=crop&q=60",
+      "/bangalore_it_office.png",
     icon: <Award size={24} />,
     linkHref: "#",
   },

@@ -10,7 +10,7 @@ import {
   Twitter,
 } from 'lucide-react'
 import kgp_logo from "../../images/kgp_logo.png"
-import LaunchpadLogo from "../../images/LaunchpadLOGO.png"
+import LaunchpadLogo from "../../images/WhatsApp Image 2026-04-16 at 22.19.48 copy.jpeg"
 import dvlaunchLogo from "../../images/dvlaunch_logo.jpeg"
 
 const data = {
