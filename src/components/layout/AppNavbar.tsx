@@ -16,6 +16,8 @@ import {
   MobileNavMenu,
 } from '../ui/resizable-navbar'
 import launchpadLogo from '../../images/WhatsApp Image 2026-04-16 at 22.19.48 copy.jpeg'
+import EcellLogo from '../../../public/e_cell_long.png'
+import kgpLogo from '../../images/kgp_logo.png'
 
 
 import {
@@ -127,6 +129,8 @@ export const AppNavbar: React.FC = () => {
               )}>
 
                 <img src={launchpadLogo} alt="KGP Launchpad Startup Accelerator" className="h-16 object-contain" />
+                <img src={EcellLogo} alt="E-Cell IIT Kharagpur" className="h-10 object-contain" />
+                <img src={kgpLogo} alt="IIT Kharagpur" className="h-10 object-contain" />
 
               </div>
               {/* Mobile: show Launchpad logo */}
