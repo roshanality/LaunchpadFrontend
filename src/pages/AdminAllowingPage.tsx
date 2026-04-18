@@ -11,6 +11,7 @@ interface PendingFounder {
   id: number
   name: string
   email: string
+  role: string
   graduation_year: number | null
   department: string | null
   created_at: string
@@ -134,10 +135,10 @@ export const AdminAllowingPage: React.FC = () => {
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-4">
             <Users className="h-8 w-8 text-blue-600" />
-            <h1 className="text-4xl font-bold text-gray-800">Founder Approvals</h1>
+            <h1 className="text-4xl font-bold text-gray-800">Pending Approvals</h1>
           </div>
           <p className="text-gray-600">
-            Review and approve or reject founder registrations
+            Review and approve or reject alumni, founder, mentor, and investor registrations
           </p>
         </div>
 
@@ -145,7 +146,7 @@ export const AdminAllowingPage: React.FC = () => {
           <Card>
             <CardContent className="py-12 text-center">
               <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-              <p className="text-gray-600 text-lg">No pending founder approvals</p>
+              <p className="text-gray-600 text-lg">No pending approvals</p>
             </CardContent>
           </Card>
         ) : (
@@ -184,6 +185,9 @@ export const AdminAllowingPage: React.FC = () => {
                     </div>
                     <Badge variant="outline" className="bg-yellow-50 text-yellow-700 border-yellow-200">
                       Pending
+                    </Badge>
+                    <Badge variant="outline" className="capitalize bg-blue-50 text-blue-700 border-blue-200">
+                      {founder.role}
                     </Badge>
                   </div>
                 </CardHeader>

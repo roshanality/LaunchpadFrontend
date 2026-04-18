@@ -6,7 +6,7 @@ interface User {
   id: number
   email: string
   name: string
-  role: 'student' | 'alumni' | 'admin'
+  role: 'student' | 'alumni' | 'founder' | 'mentor' | 'investor' | 'admin'
   graduation_year?: number
   department?: string
   is_approved?: boolean
@@ -34,7 +34,7 @@ interface RegisterData {
   name: string
   email: string
   password: string
-  role: 'student' | 'alumni'
+  role: 'student' | 'alumni' | 'founder' | 'mentor' | 'investor'
   graduation_year?: number
   department?: string
   alumni_type?: string

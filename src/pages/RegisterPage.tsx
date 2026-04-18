@@ -88,7 +88,7 @@ export const RegisterPage = () => {
     email: string;
     password: string;
     confirmPassword: string;
-    role: 'student' | 'alumni';
+    role: 'student' | 'alumni' | 'founder' | 'mentor' | 'investor';
     graduationYear: string;
     department: string;
     alumniType: string;
@@ -148,8 +148,9 @@ export const RegisterPage = () => {
       return
     }
 
-    if (formData.role === 'alumni' && (!formData.graduationYear || !formData.department || !formData.alumniType)) {
-      setError('Please provide graduation year, department and type for alumni registration')
+    const nonStudentRoles: Array<typeof formData.role> = ['alumni', 'founder', 'mentor', 'investor']
+    if (nonStudentRoles.includes(formData.role) && (!formData.graduationYear || !formData.department || !formData.alumniType)) {
+      setError('Please provide graduation year, department and type for your registration')
       return
     }
 
@@ -269,16 +270,19 @@ export const RegisterPage = () => {
                     <SelectValue placeholder="Select your role" />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-blue-200">
-                    <SelectItem value="student">Current Student</SelectItem>
-                    <SelectItem value="alumni">Alumni / Founder</SelectItem>
+                    <SelectItem value="student">🎓 Current Student</SelectItem>
+                    <SelectItem value="alumni">🏛️ Alumni</SelectItem>
+                    <SelectItem value="founder">🚀 Founder / Entrepreneur</SelectItem>
+                    <SelectItem value="mentor">🧑‍🏫 Mentor</SelectItem>
+                    <SelectItem value="investor">💼 Investor</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
-              {formData.role === 'alumni' && (
+              {['alumni', 'founder', 'mentor', 'investor'].includes(formData.role) && (
                 <>
                   <div className="space-y-2">
-                    <Label htmlFor="alumniType" className="text-gray-700">Type</Label>
+                    <Label htmlFor="alumniType" className="text-gray-700">Sub-type / Specialization</Label>
                     <Select value={formData.alumniType} onValueChange={(value) => handleSelectChange('alumniType', value)}>
                       <SelectTrigger className="bg-white/70 border-blue-200 text-gray-800">
                         <SelectValue placeholder="Select type" />
@@ -302,7 +306,7 @@ export const RegisterPage = () => {
                       name="graduationYear"
                       type="number"
                       min="1950"
-                      max="2024"
+                      max="2026"
                       value={formData.graduationYear}
                       onChange={handleChange}
                       placeholder="e.g., 2010"
@@ -324,6 +328,10 @@ export const RegisterPage = () => {
                         ))}
                       </SelectContent>
                     </Select>
+                  </div>
+
+                  <div className="text-sm text-amber-600 bg-amber-50 border border-amber-200 rounded-md px-3 py-2">
+                    ⏳ Your account will require admin approval before you can log in.
                   </div>
                 </>
               )}
