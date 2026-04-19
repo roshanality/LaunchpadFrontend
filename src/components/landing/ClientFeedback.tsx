@@ -43,7 +43,7 @@ export function ClientFeedback() {
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:50px_56px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none"></div>
               <article className="mt-auto relative z-10">
                 <p className="text-gray-700 italic mb-6">
-                  "KGP Launchpad has been a game-changer for us. We found talented
+                  "KGP Forge has been a game-changer for us. We found talented
                   students for our MVP and the launchpad team was incredibly responsive."
                 </p>
                 <div className="flex justify-between items-center border-t border-gray-100 pt-4">
@@ -54,7 +54,7 @@ export function ClientFeedback() {
                     <p className="text-gray-500 text-sm">Founder, TechVentures</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_priya.png"
                     alt="Priya Sharma"
                     className="w-12 h-12 rounded-full object-cover border border-gray-200"
                   />
@@ -64,7 +64,7 @@ export function ClientFeedback() {
             <TimelineContent animationNum={1} customVariants={revealVariants} timelineRef={testimonialRef} className="lg:flex-[3] flex-[4] lg:h-fit lg:shrink-0 flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-blue-500 p-6 shadow-md">
               <article className="mt-auto">
                 <p className="italic mb-6">
-                  "We've seen incredible results with KGP Launchpad. Found the right
+                  "We've seen incredible results with KGP Forge. Found the right
                   developers through the launchpad — highly recommend."
                 </p>
                 <div className="flex justify-between items-center border-t border-blue-500/30 pt-4">
@@ -73,7 +73,7 @@ export function ClientFeedback() {
                     <p className="text-blue-100 text-sm">Founder, Kintsugi Labs</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1512485694743-9c9538b4e6e0?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_arjun.png"
                     alt="Arjun Mehta"
                     className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
                   />
@@ -85,7 +85,7 @@ export function ClientFeedback() {
             <TimelineContent animationNum={2} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-800 p-6 shadow-md">
               <article className="mt-auto">
                 <p className="text-gray-300 italic mb-6">
-                  "KGP Launchpad connected us with sharp IIT KGP talent. Professional
+                  "KGP Forge connected us with sharp IIT KGP talent. Professional
                   and fair — the way we operate has improved a lot."
                 </p>
                 <div className="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -96,7 +96,7 @@ export function ClientFeedback() {
                     <p className="text-gray-400 text-sm">Founder, Odeao Labs</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?q=80&w=1021&auto=format&fit=crop"
+                    src="/avatar_ananya.png"
                     alt="Ananya Reddy"
                     className="w-12 h-12 rounded-full object-cover border border-gray-700"
                   />
@@ -106,7 +106,7 @@ export function ClientFeedback() {
             <TimelineContent animationNum={3} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-800 p-6 shadow-md">
               <article className="mt-auto">
                 <p className="text-gray-300 italic mb-6">
-                  "We're extremely satisfied with KGP Launchpad. The platform's
+                  "We're extremely satisfied with KGP Forge. The platform's
                   expertise and dedication have exceeded our expectations."
                 </p>
                 <div className="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -115,7 +115,7 @@ export function ClientFeedback() {
                     <p className="text-gray-400 text-sm">Founder, Labsbo</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_rohan.png"
                     alt="Rohan Verma"
                     className="w-12 h-12 rounded-full object-cover border border-gray-700"
                   />
@@ -125,7 +125,7 @@ export function ClientFeedback() {
             <TimelineContent animationNum={4} customVariants={revealVariants} timelineRef={testimonialRef} className="flex flex-col justify-between relative bg-[#111111] text-white overflow-hidden rounded-lg border border-gray-800 p-6 shadow-md">
               <article className="mt-auto">
                 <p className="text-gray-300 italic mb-6">
-                  "Customer support on KGP Launchpad is exceptional. They're
+                  "Customer support on KGP Forge is exceptional. They're
                   always available and helped us find the right student team."
                 </p>
                 <div className="flex justify-between items-center border-t border-gray-800 pt-4">
@@ -136,7 +136,7 @@ export function ClientFeedback() {
                     <p className="text-gray-400 text-sm">Founder, Boxefi</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1740102074295-c13fae3e4f8a?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_kavya.png"
                     alt="Kavya Nair"
                     className="w-12 h-12 rounded-full object-cover border border-gray-700"
                   />
@@ -148,7 +148,7 @@ export function ClientFeedback() {
             <TimelineContent animationNum={5} customVariants={revealVariants} timelineRef={testimonialRef} className="lg:flex-[3] flex-[4] flex flex-col justify-between relative bg-blue-600 text-white overflow-hidden rounded-lg border border-blue-500 p-6 shadow-md">
               <article className="mt-auto">
                 <p className="italic mb-6">
-                  "KGP Launchpad has been a key partner in our growth journey."
+                  "KGP Forge has been a key partner in our growth journey."
                 </p>
                 <div className="flex justify-between items-center border-t border-blue-500/30 pt-4">
                   <div>
@@ -156,7 +156,7 @@ export function ClientFeedback() {
                     <p className="text-blue-100 text-sm">Founder, Odeao Labs</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1563237023-b1e970526dcb?q=80&w=765&auto=format&fit=crop"
+                    src="/avatar_vikram.png"
                     alt="Vikram Singh"
                     className="w-12 h-12 rounded-full object-cover border-2 border-white/20"
                   />
@@ -167,7 +167,7 @@ export function ClientFeedback() {
               <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:50px_56px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)] pointer-events-none"></div>
               <article className="mt-auto relative z-10">
                 <p className="text-gray-700 italic mb-6">
-                  "KGP Launchpad has been a true game-changer for us. Exceptional
+                  "KGP Forge has been a true game-changer for us. Exceptional
                   service and commitment to connecting founders with IIT KGP talent
                   have made a real impact on our business."
                 </p>
@@ -177,7 +177,7 @@ export function ClientFeedback() {
                     <p className="text-gray-500 text-sm">CTO, Spectrum</p>
                   </div>
                   <img
-                    src="https://images.unsplash.com/photo-1590086782957-93c06ef21604?q=80&w=687&auto=format&fit=crop"
+                    src="/avatar_aditya.png"
                     alt="Aditya Krishnan"
                     className="w-12 h-12 rounded-full object-cover border border-gray-200"
                   />

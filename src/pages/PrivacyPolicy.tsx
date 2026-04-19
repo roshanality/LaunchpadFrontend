@@ -211,7 +211,7 @@ const PrivacyPolicy = () => (
                         </ul>
 
                         <p className="mt-4">
-                            To exercise these rights, please contact us at <strong>privacy@iitkgplaunchpad.in</strong>
+                            To exercise these rights, please contact us at <strong>privacy@iitkgpforge.in</strong>
                         </p>
                     </CardContent>
                 </Card>
@@ -317,10 +317,10 @@ const PrivacyPolicy = () => (
                             If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
                         </p>
                         <div className="bg-blue-50 p-6 rounded-lg mt-4">
-                            <p className="font-semibold text-gray-900 mb-3">KGP Launchpad</p>
+                            <p className="font-semibold text-gray-900 mb-3">KGP Forge</p>
                             <div className="space-y-2 text-gray-700">
-                                <p><strong>Privacy Officer:</strong> privacy@iitkgplaunchpad.in</p>
-                                <p><strong>General Support:</strong> support@iitkgplaunchpad.in</p>
+                                <p><strong>Privacy Officer:</strong> privacy@iitkgpforge.in</p>
+                                <p><strong>General Support:</strong> support@iitkgpforge.in</p>
                                 <p><strong>Address:</strong> IIT Kharagpur, West Bengal, India - 721302</p>
                             </div>
                         </div>

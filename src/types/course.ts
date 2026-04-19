@@ -34,4 +34,5 @@ export interface Enrollment {
   name?: string;
   email?: string;
   avatar?: string;
+  payment_screenshot?: string;
 }

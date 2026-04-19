@@ -18,7 +18,7 @@ const STEPS: ProcessStep[] = [
     subtitle: "Turn Vision Into Reality",
     description: "Launchpad enables founders to easily post opportunities and find the right people to help them scale their startup.",
     details: ["Avail Services", "Recruit Talent", "Connect with Mentors", "Connect with Investors"],
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&auto=format&fit=crop",
+    image: "/bangalore_it_office.png",
     color: "from-blue-500 to-blue-600",
   },
   {
@@ -27,7 +27,7 @@ const STEPS: ProcessStep[] = [
     subtitle: "Real Projects, Real Skills",
     description: "Students can discover exciting practical opportunities tailored to their skills, build their portfolios, and expand their network.",
     details: ["Avail Internships with Startups", "Connect with Mentors", "Attend Upskilling Workshops", "Peer Networking"],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop",
+    image: "/indian_student.png",
     color: "from-blue-600 to-indigo-600",
   },
   {
@@ -36,7 +36,7 @@ const STEPS: ProcessStep[] = [
     subtitle: "Share Expertise & Shape the Future",
     description: "Experienced professionals can give back to the community by guiding the next generation of founders and builders.",
     details: ["Mentor Startups", "Co-build with Founders", "Share Industry Insights", "Expand Network"],
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop",
+    image: "/indian_founder.png",
     color: "from-indigo-500 to-blue-600",
   },
   {
@@ -45,7 +45,7 @@ const STEPS: ProcessStep[] = [
     subtitle: "Back the Next Big Thing",
     description: "Investors get early access to vetted, high-potential startups emerging from the IIT Kharagpur ecosystem.",
     details: ["Discover Vetted Startups", "Access Pitch Decks", "Connect with Founders", "Track Growth"],
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=600&auto=format&fit=crop",
     color: "from-blue-500 to-cyan-500",
   },
 ]
@@ -80,7 +80,7 @@ export const HowItWorksSection: React.FC = () => {
         <div className="text-center mb-16">
           <span className="text-blue-600 font-semibold uppercase tracking-wider text-sm">How It Works</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-3 bg-gradient-to-r from-gray-900 via-blue-800 to-gray-900 bg-clip-text text-transparent">
-            Your Journey on KGP Launchpad
+            Your Journey on KGP Forge
           </h2>
           <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
             Empowering visionary creators and driven builders to collaborate, grow, and bring incredible ideas to life together.

@@ -97,7 +97,7 @@ export const LoginPage = () => {
       return
     }
 
-    const success = await login(formData.email, formData.password)
+    const success = await login(formData.email, formData.password, setError)
     if (success) {
       navigate('/dashboard')
     } else {
@@ -137,7 +137,7 @@ export const LoginPage = () => {
             Welcome Back
           </h1>
           <p className="text-gray-600">
-            Sign in to your KGP Launchpad account
+            Sign in to your KGP Forge account
           </p>
         </div>
 

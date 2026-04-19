@@ -6,7 +6,7 @@ interface User {
   id: number
   email: string
   name: string
-  role: 'student' | 'alumni' | 'admin'
+  role: 'student' | 'alumni' | 'founder' | 'mentor' | 'investor' | 'admin'
   graduation_year?: number
   department?: string
   is_approved?: boolean
@@ -23,7 +23,7 @@ interface User {
 interface AuthContextType {
   user: User | null
   token: string | null
-  login: (email: string, password: string) => Promise<boolean>
+  login: (email: string, password: string, setError?: (msg: string) => void) => Promise<boolean>
   register: (userData: RegisterData) => Promise<boolean>
   loginWithToken: (token: string, user: User) => void
   logout: () => void
@@ -34,7 +34,7 @@ interface RegisterData {
   name: string
   email: string
   password: string
-  role: 'student' | 'alumni'
+  role: 'student' | 'alumni' | 'founder' | 'mentor' | 'investor'
   graduation_year?: number
   department?: string
   alumni_type?: string
@@ -78,7 +78,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setIsLoading(false)
   }, [])
 
-  const login = async (email: string, password: string): Promise<boolean> => {
+  const login = async (email: string, password: string, setError?: (msg: string) => void): Promise<boolean> => {
     try {
       setIsLoading(true)
       const response = await fetch(getApiUrl('/api/auth/login'), {
@@ -91,6 +91,14 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       if (response.ok) {
         const data = await response.json()
+        // Check if admin OTP is required
+        if (data.otp_required) {
+          setError?.('Admin accounts must use the Admin Login page.')
+          setTimeout(() => {
+            window.location.href = '/admin/login'
+          }, 1500)
+          return false
+        }
         setToken(data.token)
         setUser(data.user)
         localStorage.setItem('token', data.token)
@@ -99,6 +107,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       } else {
         const errorData = await response.json()
         console.error('Login failed:', errorData.error)
+        setError?.(errorData.error)
         return false
       }
     } catch (error) {
