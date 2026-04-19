@@ -2,10 +2,14 @@
   RewriteEngine On
   RewriteBase /
 
-  # SPA fallback for React Router: if the request is not a real file/folder,
-  # serve index.html so routes like /login work on refresh and direct open.
+  # 1. Reverse Proxy for the Backend API
+  # Any request to /api/... will be forwarded to your Python backend running on port 5110
+  RewriteRule ^api/(.*)$ http://127.0.0.1:5110/api/$1 [P,L]
+
+  # 2. Single Page Application (SPA) Routing for React Router
+  # If a file or folder doesn't exist, serve index.html (fixes /login 404s)
+  RewriteCond %{REQUEST_URI} !^/api
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_URI} !^/api
   RewriteRule . /index.html [L]
 </IfModule>
