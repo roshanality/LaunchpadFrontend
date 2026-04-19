@@ -43,7 +43,7 @@ interface Profile {
   id: number
   name: string
   email: string
-  role: 'student' | 'alumni' | 'admin'
+  role: 'student' | 'alumni' | 'admin' | 'founder' | 'mentor' | 'investor'
   graduation_year?: number
   department?: string
   avatar?: string
